@@ -1,29 +1,37 @@
 
 var images = [
-  'http://cdn4.lacdn.com/wp-content/uploads/2014/03/golden-retriever-puppy-webcam.jpg',
-  'http://www.shanalogic.com/wordpress/wp-content/uploads2/2015/10/golden-retriever5.jpg',
-  'http://www.drodd.com/images12/golden-retriever-puppies2.jpg',
-  'http://cdn-1.dooziedog.com/dog_breeds/images/full/Golden-Retriever-Puppy-6.jpg'
+  'https://unsplash.it/600/400?image=1053',
+  'https://unsplash.it/600/400?image=1069',
+  'https://unsplash.it/600/400?image=1061',
+  'https://unsplash.it/600/400?image=1030',
+  'https://unsplash.it/600/400?image=903'
 ];
 
-console.log("helllooooo");
+// var imgs = [];
+
+// for (var i = 0; i < images.length; i++) {
+//   imgs[i] = new Image();
+//   imgs[i].src = images[i];
+// };
 var current = 0;
 
 function showPrevImage(){
-  i--;
-  if (i < 0){
-    i = images.length - 1;
+  current--;
+  if (current < 0){
+    current = images.length - 1;
   }
-  $('#carousel').attr('src', images[i]);
+  // $('#carousel').append('src', imgs[current]);
+  $('#carousel').attr('src', images[current]);
 }
 
 $('#prev').click(showPrevImage);
 
 function showNextImage(){
-  i++;
-  if (i >= images.length){
-    i = 0;
+  current++;
+  if (current >= images.length){
+    current = 0;
   }
-  $('#carousel').attr('src', images[i]);
+  // $('#carousel').append(imgs[current]);
+  $('#carousel').attr('src', images[current]);
 }
 $('#next').click(showNextImage);

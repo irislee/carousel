@@ -1,20 +1,20 @@
 var current = 0;
 
 function showPrevImage(){
-  i--;
-  if (i < 0){
-    i = images.length - 1;
+  current--;
+  if (current < 0){
+    current = images.length - 1;
   }
-  $('#carousel').attr('src', images[i]);
+  $('#carousel').attr('src', images[current]);
 }
 
 $('#prev').click(showPrevImage);
 
 function showNextImage(){
-  i++;
-  if (i >= images.length){
-    i = 0;
+  current++;
+  if (current >= images.length){
+    current = 0;
   }
-  $('#carousel').attr('src', images[i]);
+  $('#carousel').attr('src', images[current]);
 }
 $('#next').click(showNextImage);
